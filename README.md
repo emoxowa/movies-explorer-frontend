@@ -3,5 +3,3 @@
 
 
 [Ссылка на макет в Фигме](https://drive.google.com/drive/folders/1OFROUnXZKQvoaR4yGTWd1K7OsoRrQBRe?usp=sharing)
-
-[Ссылка на gh-pages](https://emoxowa.github.io/movies-explorer-frontend)
