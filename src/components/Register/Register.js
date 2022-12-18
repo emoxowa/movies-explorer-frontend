@@ -1,11 +1,11 @@
 import React from "react";
 import "./Register.css";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.svg";
 
 function Register() {
   return (
-    <div className="register">
+    <main className="register">
       <NavLink to="/">
         <img src={logo} className="register__logo" alt="Logo" />
       </NavLink>
@@ -32,7 +32,7 @@ function Register() {
           Войти
         </NavLink>
       </p>
-    </div>
+    </main>
   );
 }
 

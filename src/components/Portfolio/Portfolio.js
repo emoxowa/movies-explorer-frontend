@@ -4,7 +4,7 @@ import arrow from '../../images/icon_arrow.svg'
 
 function Portfolio() {
   return (
-    <div className="portfolio">
+    <section className="portfolio">
       <div className="portfolio__container">
         <h2 className="portfolio__title">Портфолио</h2>
         <ul className="portfolio__list">
@@ -55,7 +55,7 @@ function Portfolio() {
           </li>
           </ul>
       </div>
-    </div>
+    </section>
   );
 }
 

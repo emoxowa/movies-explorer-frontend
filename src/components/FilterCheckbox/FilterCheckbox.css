@@ -12,6 +12,7 @@
 }
 
 .filter-checkbox__checkbox {
+  cursor: pointer;
   width: 36px;
   height: 20px;
   background-color: #EBEBEB;

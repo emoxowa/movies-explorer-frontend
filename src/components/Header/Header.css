@@ -1,13 +1,13 @@
 .header {
   max-width: 1280px;
-  height: 74px;
+  /* height: 74px; */
   box-sizing: border-box;
   padding: 18px 70px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 38px auto;
   align-items: center;
   margin: 0 auto;
-  gap: 44px;
+  gap: 28px;
 }
 
 .header__logo {

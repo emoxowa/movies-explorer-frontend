@@ -6,11 +6,11 @@ import Preloader from "../Preloader/Preloader";
 
 function Movies() {
   return (
-    <div className="movies">
+    <main  className="movies">
       <SearchForm />
       <MoviesCardList />
       <Preloader />
-    </div>
+    </main>
   );
 }
 

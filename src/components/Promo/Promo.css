@@ -35,10 +35,10 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 550px) {
     .promo {
     min-height: 586px;
-    margin: 12px auto 0;
+    margin: 11px auto 0;
   }
 
   .promo__container {

@@ -34,7 +34,7 @@ function App() {
           <SavedMovies />
           <Footer />
         </Route>
-        <Route path="/profile" >
+        <Route path="/profile">
           <Header loggedIn={loggedIn} />
           <Profile />
         </Route>

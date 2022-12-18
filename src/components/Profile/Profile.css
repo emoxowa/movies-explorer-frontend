@@ -43,7 +43,8 @@
 }
 
 .profile__input:focus {
-  outline: none;
+  outline: 1px solid #3DDC84;
+  outline-offset: 2px;
 }
 
 .profile__text {

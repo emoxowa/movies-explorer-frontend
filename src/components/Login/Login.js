@@ -1,11 +1,11 @@
 import React from "react";
 import "./Login.css";
 import { NavLink } from "react-router-dom";
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.svg'
 
 function Login() {
   return (
-    <div className="login">
+    <main className="login">
       <NavLink to="/">
         <img src={logo} className="login__logo" alt="Logo" />
       </NavLink>
@@ -23,7 +23,7 @@ function Login() {
           Регистрация
         </NavLink>
       </p>
-    </div>
+    </main>
   );
 }
 

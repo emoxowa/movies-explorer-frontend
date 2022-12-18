@@ -62,6 +62,10 @@
   border: none;
 }
 
+.register__input:focus {
+  outline: 1px solid #3DDC84;
+}
+
 .register__input_error {
     color: #EE3465;
 }

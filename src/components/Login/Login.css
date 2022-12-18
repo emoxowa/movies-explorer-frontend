@@ -62,6 +62,10 @@
   margin-bottom: 10px;
 }
 
+.login__input:focus {
+  outline: 1px solid #3DDC84;
+}
+
 .login__input_error {
     color: #EE3465;
 }

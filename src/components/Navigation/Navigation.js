@@ -16,55 +16,68 @@ function Navigation({ loggedIn }) {
 
   if (!loggedIn) {
     return (
-      <div className="navigation__sign-container">
-        <NavLink
-          className="navigation__sign-up link"
-          to="/signup"
-        >
-          Регистрация
-        </NavLink>
-        <NavLink className="navigation__sign-in link" to="/signin">
-          <button className="navigation__button">Войти</button>
-        </NavLink>
-      </div>
+      <nav className="navigation">
+        <ul className="navigation__list-sign">
+          <li className="navigation__list-item">
+            <NavLink className="navigation__sign-up link" to="/signup">
+              Регистрация
+            </NavLink>
+          </li>
+          <li className="navigation__list-item">
+            <NavLink className="navigation__sign-in link" to="/signin">
+              <button className="navigation__button">Войти</button>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     );
   }
   return (
-    <div
+    <nav
       className={`
-        ${menuStatus ? "navigation__logged-in-container_opened" : ""} `}
+        ${
+          menuStatus ? "navigation navigation__logged-in-container_opened" : ""
+        } `}
     >
-      <div
-        className={`navigation__logged-in-container ${
+      <ul
+        className={`navigation__logged-in-container navigation ${
           menuStatus ? "" : "disabled"
         } `}
       >
-        <div className="navigation__movies-container">
-          <NavLink
-            to="/"
-            className="navigation__main link"
-            onClick={closeBurgerMenu}
-          >
-            Главная
-          </NavLink>
-          <NavLink
-            activeClassName="link_type_active"
-            className="navigation__movies link"
-            to="/movies"
-            onClick={closeBurgerMenu}
-          >
-            Фильмы
-          </NavLink>
-          <NavLink
-            activeClassName="link_type_active"
-            className="navigation__saved-movies link"
-            to="/saved-movies"
-            onClick={closeBurgerMenu}
-          >
-            Сохранённые фильмы
-          </NavLink>
-        </div>
-        <div className="navigation__account-container">
+        <li className="navigation__list-item">
+          <ul className="navigation navigation__movies-container">
+            <li className="navigation__list-item">
+              <NavLink
+                to="/"
+                className="navigation__main link"
+                onClick={closeBurgerMenu}
+              >
+                Главная
+              </NavLink>
+            </li>
+            <li className="navigation__list-item">
+              <NavLink
+                activeClassName="link_type_active"
+                className="navigation__movies link"
+                to="/movies"
+                onClick={closeBurgerMenu}
+              >
+                Фильмы
+              </NavLink>
+            </li>
+            <li className="navigation__list-item">
+              <NavLink
+                activeClassName="link_type_active"
+                className="navigation__saved-movies link"
+                to="/saved-movies"
+                onClick={closeBurgerMenu}
+              >
+                Сохранённые фильмы
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+        <li className="navigation__list-item navigation__account-container">
           <NavLink
             className="navigation__account link"
             to="/profile"
@@ -72,15 +85,15 @@ function Navigation({ loggedIn }) {
           >
             <button className="navigation__button-account">Аккаунт</button>
           </NavLink>
-        </div>
-      </div>
+        </li>
+      </ul>
       <button
         className={`navigation__burger ${
           menuStatus ? "navigation__burger_opened" : ""
         }`}
         onClick={menuButtonClick}
       ></button>
-    </div>
+    </nav>
   );
 }
 

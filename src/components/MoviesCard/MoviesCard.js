@@ -20,7 +20,7 @@ import pic_16 from '../../images/pic_16.png';
 function MoviesCard() {
   return (
     <>
-      <div className="movies-card">
+      <li className="movies-card">
         <img src={pic_1} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">33 слова о дизайне</h2>
@@ -30,32 +30,32 @@ function MoviesCard() {
           ></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_2} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Киноальманах «100 лет дизайна»</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_3} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">В погоне за Бенкси</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_4} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Баския: Взрыв реальности</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_5} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Бег это свобода</h2>
@@ -65,8 +65,8 @@ function MoviesCard() {
           ></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_6} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Книготорговцы</h2>
@@ -76,16 +76,16 @@ function MoviesCard() {
           ></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_7} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Когда я думаю о Германии ночью</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_8} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">
@@ -94,8 +94,8 @@ function MoviesCard() {
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_9} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">
@@ -107,16 +107,16 @@ function MoviesCard() {
           ></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_10} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Соберись перед прыжком</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_11} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">
@@ -125,8 +125,8 @@ function MoviesCard() {
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_12} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">
@@ -135,32 +135,32 @@ function MoviesCard() {
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_13} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Рудбой</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_14} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Скейт — кухня</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_15} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Война искусств</h2>
           <button className="movies-card__like-button" type="button"></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
-      <div className="movies-card">
+      </li>
+      <li className="movies-card">
         <img src={pic_16} className="movies-card__image" alt="Изображение" />
         <div className="movies-card__info">
           <h2 className="movies-card__title">Зона</h2>
@@ -170,7 +170,7 @@ function MoviesCard() {
           ></button>
         </div>
         <p className="movies-card__duration">1ч 42м</p>
-      </div>
+      </li>
     </>
   );
 }
