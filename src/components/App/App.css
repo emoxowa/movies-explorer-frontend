@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  background-color: #202020;
+  min-height: 100vh;
+  min-width: 320px;
+  color: #FFFFFF;
+  margin: 0 auto;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  opacity: 0.7;
+  transition: 0.2s linear;
+}

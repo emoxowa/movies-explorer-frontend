@@ -1,0 +1,95 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 74px;
+}
+
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  margin: 105px 0 220px;
+  width: 410px;
+  gap: 16px;
+}
+
+.profile__input-title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #424242;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.profile__input-title:last-child {
+  padding: 0;
+  border-bottom: none;
+}
+
+.profile__input {
+  width: 80%;
+  background-color: transparent;
+  color: #FFFFFF;
+  text-align: end;
+  border: none;
+}
+
+.profile__input:focus {
+  outline: 1px solid #3DDC84;
+  outline-offset: 2px;
+}
+
+.profile__text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0 0 16px;
+  cursor: pointer;
+}
+
+.profile__text:hover {
+  opacity: 0.6;
+  transition: 0.2s linear;
+}
+
+.profile__link {
+  color: #EE3465;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 70px;
+}
+
+.profile__input::placeholder {
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .profile__title {
+    margin-top: 234px;
+  }
+
+  .profile__form {
+    margin: 76px 0 210px;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile__title {
+    margin-top: 70px;
+  }
+
+  .profile__form {
+    margin: 60px 0 379px;
+    width: 260px;
+    gap: 16px;
+  }
+}
