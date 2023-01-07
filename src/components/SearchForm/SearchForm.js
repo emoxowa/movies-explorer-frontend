@@ -22,7 +22,7 @@ function SearchForm({ handleSearchSubmit, isShortMovies, onFilter }) {
 
   return (
     <section className="search">
-      <form className="search-form" onSubmit={handleSubmit}>
+      <form noValidate className="search-form" onSubmit={handleSubmit}>
         <div className="search-form__input-container">
           <input
             type="text"

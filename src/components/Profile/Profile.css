@@ -8,13 +8,13 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
-  margin-top: 74px;
+  margin-top: 70px;
 }
 
 .profile__form {
   display: flex;
   flex-direction: column;
-  margin: 105px 0 220px;
+  margin: 105px 0 16px;
   width: 410px;
   gap: 16px;
 }
@@ -51,8 +51,11 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  margin: 0 0 16px;
+  margin-top: 185px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
 }
 
 .profile__text:hover {
@@ -66,6 +69,9 @@
   font-size: 13px;
   line-height: 16px;
   margin-bottom: 70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .profile__input::placeholder {
