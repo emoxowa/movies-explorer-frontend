@@ -40,15 +40,17 @@ function MoviesCard({
   return (
     <>
       <li className="movies-card">
-        <img
-          src={
-            isSavedMovies
-              ? movie.image
-              : `${MOVIES_IMAGE_URL}${movie.image.url}`
-          }
-          className="movies-card__image"
-          alt={movie.nameRU}
-        />
+        <a href={movie.trailerLink} target="_blank" rel="noreferrer">
+          <img
+            src={
+              isSavedMovies
+                ? movie.image
+                : `${MOVIES_IMAGE_URL}${movie.image.url}`
+            }
+            className="movies-card__image"
+            alt={movie.nameRU}
+          />
+        </a>
         <div className="movies-card__info">
           <h2 className="movies-card__title">{movie.nameRU}</h2>
           {isSavedMovies ? (
