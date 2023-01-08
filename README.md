@@ -6,4 +6,4 @@
 
 [Ссылка на сайт](https://movies-explorer.yandex.nomoredomains.club/)
 
-[Ссылка на пул-реквест](https://movies-explorer.yandex.nomoredomains.club/)
+[Ссылка на пул-реквест](https://github.com/emoxowa/movies-explorer-frontend/pull/2#issue-1524536654)
