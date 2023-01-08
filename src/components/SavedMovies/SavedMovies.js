@@ -9,7 +9,6 @@ import { filterMovies, filterDuration } from "../../utils/utils";
 function SavedMovies({ loggedIn, savedMovies, handleMovieDelete }) {
   const [isNotFound, setIsNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchErrorStatus, setSearchErrorStatus] = useState(false);
   const [filteredMovies, setFilteredMovies] = useState(savedMovies);
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [userQuery, setUserQuery] = useState("");
@@ -30,7 +29,6 @@ function SavedMovies({ loggedIn, savedMovies, handleMovieDelete }) {
     setFilteredMovies(isShortMovies ? filterDuration(moviesList) : moviesList);
   }, [savedMovies, userQuery, isShortMovies]);
  
-
   useEffect(() => {
     if (localStorage.getItem("shortSavedMovies") === "true") {
       setIsShortMovies(true);
@@ -59,7 +57,6 @@ function SavedMovies({ loggedIn, savedMovies, handleMovieDelete }) {
         <MoviesCardList
           isLoading={isLoading}
           isNotFound={isNotFound}
-          searchErrorStatus={searchErrorStatus}
           isSavedMovies={true}
           movies={filteredMovies}
           savedMovies={savedMovies}

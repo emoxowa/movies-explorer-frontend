@@ -1,32 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Login.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logo.svg";
+import useFormWithValidation from "../useFormWithValidation/useFormWithValidation";
+import { EMAIL_REGEX } from "../../utils/constants";
 
 function Login({ handleLogin }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
 
-  useEffect(() => {
-    resetForm();
-  }, []);
-
-  function resetForm() {
-    setEmail("");
-    setPassword("");
-  }
+  const buttonClassName = `${
+    isValid ? "login__button" : "login__button login__button-error"
+  }`;
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleLogin(email, password);
-  }
-
-  function handleChange(evt) {
-    if (evt.target.name === "Email") {
-      setEmail(evt.target.value);
-    } else if (evt.target.name === "Password") {
-      setPassword(evt.target.value);
-    }
+    handleLogin(values.email, values.password);
   }
 
   return (
@@ -41,20 +29,25 @@ function Login({ handleLogin }) {
           className="login__input"
           required
           type="email"
-          name="Email"
-          value={email}
+          name="email"
+          pattern={EMAIL_REGEX}
+          value={values.email || ""}
           onChange={handleChange}
         ></input>
+        <span className="login__error">{errors.email}</span>
         <label className="login__input-title">Пароль</label>
         <input
           className="login__input"
           required
           type="password"
-          name="Password"
-          value={password}
+          name="password"
+          value={values.password || ""}
           onChange={handleChange}
         ></input>
-        <button className="login__button" type="submit">Войти</button>
+        <span className="login__error">{errors.password}</span>
+        <button disabled={!isValid} className={buttonClassName} type="submit">
+          Войти
+        </button>
       </form>
       <p className="login__text">
         Ещё не зарегистрированы?

@@ -31,7 +31,7 @@ function MoviesCardList({
 
   useEffect(() => {
     displayCountMovies();
-  }, []);
+  });
 
   useEffect(() => {
     setTimeout(() => {

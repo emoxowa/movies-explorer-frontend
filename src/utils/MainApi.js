@@ -1,8 +1,6 @@
 import { MAIN_URL, MOVIES_IMAGE_URL } from "./constants";
 import { checkResponse } from "./utils";
 
-// Users
-
 export const getUser = () => {
   return fetch(`${MAIN_URL}/users/me`, {
     method: "GET",
@@ -27,8 +25,6 @@ export const updateUser = ({ name, email}) => {
     body: JSON.stringify({ name: name, email: email }),
   }).then(checkResponse);
 };
-
-//Movies
 
 export const getMovies = () => {
   return fetch(`${MAIN_URL}/movies`, {

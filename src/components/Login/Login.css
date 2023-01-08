@@ -93,6 +93,11 @@
   color: #C2C2C2;
 }
 
+.login__button-error:hover {
+  opacity: 1;
+  cursor: context-menu;
+}
+
 .login__text {
   font-weight: 400;
   font-size: 14px;

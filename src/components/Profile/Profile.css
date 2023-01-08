@@ -13,7 +13,7 @@
 
 .profile__form {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   margin: 105px 0 16px;
   width: 410px;
   gap: 16px;
@@ -63,6 +63,15 @@
   transition: 0.2s linear;
 }
 
+.profile__text-error {
+  color: #C2C2C2;
+}
+
+.profile__text-error:hover {
+  margin-top: 185px;
+  cursor: context-menu;
+}
+
 .profile__link {
   color: #EE3465;
   font-weight: 500;
@@ -76,6 +85,16 @@
 
 .profile__input::placeholder {
   color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.profile__error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+  margin-top: -10px;
+  text-align: start;
 }
 
 @media (max-width: 768px) {

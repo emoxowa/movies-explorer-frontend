@@ -30,7 +30,6 @@ function MoviesCard({
     handleMovieDelete(movie);
   }
 
-
   const movieLikeClassName = `${
     isSavedMovie
       ? "movies-card__like-button movies-card__like-button_active"

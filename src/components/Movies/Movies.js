@@ -16,19 +16,20 @@ function Movies({ loggedIn, handleLikeClick, handleMovieDelete, savedMovies }) {
   const [isShortMovies, setIsShortMovies] = useState(false);
 
   function handleSearchSubmit(query) {
-    const userQuery = query.toLowerCase().trim();
+  const userQuery = query.toLowerCase().trim();
 
-    localStorage.setItem("userQuery", userQuery);
-    localStorage.setItem("shortMovies", isShortMovies);
+  localStorage.setItem("userQuery", userQuery);
+  localStorage.setItem("shortMovies", isShortMovies);
 
-    setIsLoading(true);
-    moviesApi
-      .getMovies()
-      .then((movies) => {
-        handleFilterMovies(movies, userQuery, isShortMovies);
-      })
-      .catch(() => setSearchErrorStatus(true))
-      .finally(() => setIsLoading(false));
+  setIsLoading(true);
+  moviesApi
+    .getMovies()
+    .then((movies) => {
+      handleFilterMovies(movies, userQuery, isShortMovies);
+      setSearchErrorStatus(false);
+    })
+    .catch(() => setSearchErrorStatus(true))
+    .finally(() => setIsLoading(false));
   }
 
   function handleShortMovies() {

@@ -4,7 +4,6 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import logo from '../../images/logo.svg'
 
-
 function Header({ loggedIn }) {
     return (
       <header className="header">

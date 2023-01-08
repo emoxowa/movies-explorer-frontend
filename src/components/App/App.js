@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  useHistory,
+  Redirect,
+} from "react-router-dom";
 
 import "./App.css";
 import Header from '../Header/Header';
@@ -21,7 +26,6 @@ import successIcon from '../../images/icon_success.png';
 import failIcon from "../../images/icon_fail.png"
 
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -59,8 +63,10 @@ function App() {
 
   function handleRegister(name, email, password) {
     auth.register(name, email, password)
+      .then(() => {
+        handleLogin(email, password);
+      })
       .then((res) => {
-        history.push("/signin");
         setDataInfoTool({
           title: "Вы успешно зарегистрировались!",
           icon: successIcon,
@@ -83,6 +89,7 @@ function App() {
       .then((res) => {
         localStorage.setItem("token", res.token);
         setLoggedIn(true);
+        localStorage.setItem("loggedIn", loggedIn);
         history.push("/movies");
       })
       .catch((err) => {
@@ -131,7 +138,7 @@ function App() {
     api
       .createMovie(movie)
       .then((newMovie) => setSavedMovies([newMovie, ...savedMovies]))
-      .catch((err) => console.log(`Error ${err}`));
+      .catch((err) => handleUnauthorized(err));
   }
 
   function handleMovieDelete(movie) {
@@ -140,7 +147,7 @@ function App() {
       .then(() =>
         setSavedMovies((state) => state.filter((m) => m._id !== movie._id))
       )
-      .catch((err) => console.log(`Error ${err}`));
+      .catch((err) => handleUnauthorized(err));
   }
 
   function closeInfoTooltip() {
@@ -151,6 +158,12 @@ function App() {
     setIsInfoTooltipOpen(true);
   }
 
+  function handleUnauthorized(err) {
+    if (err === "Error: 401") {
+      handleSignOut();
+    }
+  }
+  
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
@@ -161,23 +174,31 @@ function App() {
             <Footer />
           </Route>
           <Route path="/signin">
-            <Login handleLogin={handleLogin} />
+            {!loggedIn ? (
+              <Login handleLogin={handleLogin} />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
           <Route path="/signup">
-            <Register handleRegister={handleRegister} />
+            {!loggedIn ? (
+              <Register handleRegister={handleRegister} />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
           <ProtectedRoute
-            loggedIn={loggedIn}
-            savedMovies={savedMovies}
             path="/saved-movies"
             component={SavedMovies}
+            loggedIn={loggedIn}
+            savedMovies={savedMovies}
             handleMovieDelete={handleMovieDelete}
           ></ProtectedRoute>
           <ProtectedRoute
-            loggedIn={loggedIn}
             path="/movies"
-            savedMovies={savedMovies}
             component={Movies}
+            loggedIn={loggedIn}
+            savedMovies={savedMovies}
             handleLikeClick={handleLikeClick}
             handleMovieDelete={handleMovieDelete}
           ></ProtectedRoute>

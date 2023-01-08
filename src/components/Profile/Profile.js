@@ -1,34 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./Profile.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import Header from "../Header/Header";
+import useFormWithValidation from "../useFormWithValidation/useFormWithValidation";
+import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
 
 function Profile({ loggedIn, signOut, onUpdateUser }) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
   const currentUser = useContext(CurrentUserContext);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+
+  const buttonClassName = `${
+    isValid ? "profile__text" : "profile__text profile__text-error"
+  }`;
 
   function handleSubmit(evt) {
     evt.preventDefault();
 
     onUpdateUser({
-      name: name,
-      email: email,
+      name: values.name,
+      email: values.email,
     });
   }
-
-  function handleChange(evt) {
-    if (evt.target.name === "Name") {
-      setName(evt.target.value);
-    } else if (evt.target.name === "Email") {
-      setEmail(evt.target.value);
-    }
-  }
-
-  React.useEffect(() => {
-    setName(currentUser.name);
-    setEmail(currentUser.email);
-  }, [currentUser]);
 
   return (
     <>
@@ -41,24 +33,36 @@ function Profile({ loggedIn, signOut, onUpdateUser }) {
             <input
               type="text"
               className="profile__input"
-              name="Name"
+              name="name"
+              placeholder={currentUser.name}
+              minLength="2"
+              maxLength="30"
+              pattern={USER_NAME_REGEX}
               onChange={handleChange}
-              value={name}
+              value={values.name || ""}
               required
             ></input>
           </label>
+          <span className="profile__error">{errors.name}</span>
           <label className="profile__input-title">
             E-mail
             <input
               type="email"
               className="profile__input"
-              name="Email"
+              name="email"
+              placeholder={currentUser.email}
+              pattern={EMAIL_REGEX}
               onChange={handleChange}
-              value={email}
+              value={values.email || ""}
               required
             ></input>
           </label>
-          <button className="profile__text" onClick={onUpdateUser}>
+          <span className="profile__error">{errors.email}</span>
+          <button
+            disabled={!isValid}
+            className={buttonClassName}
+            onClick={onUpdateUser}
+          >
             Редактировать
           </button>
         </form>
