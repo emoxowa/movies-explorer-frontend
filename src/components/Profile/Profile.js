@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, {useState, useEffect, useContext } from "react";
 import "./Profile.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import Header from "../Header/Header";
@@ -8,9 +8,10 @@ import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
 function Profile({ loggedIn, signOut, onUpdateUser }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
   const currentUser = useContext(CurrentUserContext);
+  const [isLastData, setIsLastData] = useState(false);
 
   const buttonClassName = `${
-    isValid ? "profile__text" : "profile__text profile__text-error"
+    isValid && !isLastData ? "profile__text" : "profile__text profile__text-error"
   }`;
 
   function handleSubmit(evt) {
@@ -21,6 +22,17 @@ function Profile({ loggedIn, signOut, onUpdateUser }) {
       email: values.email,
     });
   }
+
+  useEffect(() => {
+    if (
+      currentUser.name === values.name &&
+      currentUser.email === values.email
+    ) {
+      setIsLastData(true);
+    } else {
+      setIsLastData(false);
+    }
+  }, [values, currentUser]);
 
   return (
     <>
@@ -59,9 +71,9 @@ function Profile({ loggedIn, signOut, onUpdateUser }) {
           </label>
           <span className="profile__error">{errors.email}</span>
           <button
-            disabled={!isValid}
+            disabled={!isValid || isLastData}
             className={buttonClassName}
-            onClick={onUpdateUser}
+            type='submit'
           >
             Редактировать
           </button>

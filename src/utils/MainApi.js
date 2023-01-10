@@ -13,8 +13,8 @@ export const getUser = () => {
   }).then(checkResponse);
 };
 
-export const updateUser = ({ name, email}) => {
-  return fetch(`${MAIN_URL}/users/me`, {
+export const updateUser = async(data) => {
+  return await fetch(`${MAIN_URL}/users/me`, {
     method: "PATCH",
     credentials: "include",
     headers: {
@@ -22,7 +22,10 @@ export const updateUser = ({ name, email}) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name: name, email: email }),
+    body: JSON.stringify({
+      name: data.name,
+      email: data.email,
+    }),
   }).then(checkResponse);
 };
 

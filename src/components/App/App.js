@@ -114,16 +114,16 @@ function App() {
       });
   }
 
-  function handleUpdateUser({ name, email }) {
+  function handleUpdateUser(userData) {
     api
-      .updateUser({ name, email })
+      .updateUser(userData)
       .then((res) => {
-        setCurrentUser(res);
         setDataInfoTool({
           title: "Вы успешно обновили данные пользователя!",
           icon: successIcon,
         });
         handleInfoTooltipOpen();
+        setCurrentUser(res);
       })
       .catch((err) => {
         setDataInfoTool({
