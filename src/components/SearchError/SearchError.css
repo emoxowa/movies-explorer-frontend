@@ -1,0 +1,14 @@
+.search-error {
+  margin: 0 auto;
+}
+
+.search-error__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  white-space: pre-line;
+  margin-left: 50px;
+  margin-right: 50px;
+}
