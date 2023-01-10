@@ -5,8 +5,9 @@ import logo from "../../images/logo.svg";
 import useFormWithValidation from "../useFormWithValidation/useFormWithValidation";
 import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
 
-function Register({ handleRegister }) {
-  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+function Register({ handleRegister, isLoading }) {
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation();
 
   const buttonClassName = `${
     isValid ? "register__button" : "register__button register__button-error"
@@ -18,13 +19,9 @@ function Register({ handleRegister }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleRegister(
-      values.name,
-      values.email,
-      values.password,
-    );
+    handleRegister(values.name, values.email, values.password);
   }
-  
+
   return (
     <main className="register">
       <NavLink to="/">
@@ -67,7 +64,11 @@ function Register({ handleRegister }) {
           onChange={handleChange}
         ></input>
         <span className="register__error">{errors.password}</span>
-        <button disabled={!isValid} className={buttonClassName} type="submit">
+        <button
+          disabled={!isValid || isLoading}
+          className={buttonClassName}
+          type="submit"
+        >
           Зарегистрироваться
         </button>
       </form>

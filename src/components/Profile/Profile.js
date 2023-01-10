@@ -5,13 +5,15 @@ import Header from "../Header/Header";
 import useFormWithValidation from "../useFormWithValidation/useFormWithValidation";
 import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
 
-function Profile({ loggedIn, signOut, onUpdateUser }) {
+function Profile({ loggedIn, signOut, onUpdateUser, isLoading }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
   const currentUser = useContext(CurrentUserContext);
   const [isLastData, setIsLastData] = useState(false);
 
   const buttonClassName = `${
-    isValid && !isLastData ? "profile__text" : "profile__text profile__text-error"
+    isValid && !isLastData
+      ? "profile__text"
+      : "profile__text profile__text-error"
   }`;
 
   function handleSubmit(evt) {
@@ -71,9 +73,9 @@ function Profile({ loggedIn, signOut, onUpdateUser }) {
           </label>
           <span className="profile__error">{errors.email}</span>
           <button
-            disabled={!isValid || isLastData}
+            disabled={!isValid || isLastData || isLoading}
             className={buttonClassName}
-            type='submit'
+            type="submit"
           >
             Редактировать
           </button>

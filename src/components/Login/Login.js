@@ -5,7 +5,7 @@ import logo from "../../images/logo.svg";
 import useFormWithValidation from "../useFormWithValidation/useFormWithValidation";
 import { EMAIL_REGEX } from "../../utils/constants";
 
-function Login({ handleLogin }) {
+function Login({ handleLogin, isLoading }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   const buttonClassName = `${
@@ -45,7 +45,11 @@ function Login({ handleLogin }) {
           onChange={handleChange}
         ></input>
         <span className="login__error">{errors.password}</span>
-        <button disabled={!isValid} className={buttonClassName} type="submit">
+        <button
+          disabled={!isValid || isLoading}
+          className={buttonClassName}
+          type="submit"
+        >
           Войти
         </button>
       </form>

@@ -33,6 +33,7 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([]);
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
   const [dataInfoTool, setDataInfoTool] = useState({ title: "", icon: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
 
@@ -62,7 +63,9 @@ function App() {
   }, [loggedIn]);
 
   function handleRegister(name, email, password) {
-    auth.register(name, email, password)
+    setIsLoading(true);
+    auth
+      .register(name, email, password)
       .then(() => {
         handleLogin(email, password);
       })
@@ -79,11 +82,14 @@ function App() {
           icon: failIcon,
         });
         handleInfoTooltipOpen();
-      }
-      )
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   function handleLogin(email, password) {
+    setIsLoading(true);
     auth
       .login(email, password)
       .then((res) => {
@@ -99,6 +105,9 @@ function App() {
         });
         handleInfoTooltipOpen();
       })
+     .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   function handleSignOut() {
@@ -115,6 +124,7 @@ function App() {
   }
 
   function handleUpdateUser(userData) {
+    setIsLoading(true);
     api
       .updateUser(userData)
       .then((res) => {
@@ -131,6 +141,9 @@ function App() {
           icon: failIcon,
         });
         handleInfoTooltipOpen();
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -175,14 +188,14 @@ function App() {
           </Route>
           <Route path="/signin">
             {!loggedIn ? (
-              <Login handleLogin={handleLogin} />
+              <Login handleLogin={handleLogin} isLoading={isLoading} />
             ) : (
               <Redirect to="/" />
             )}
           </Route>
           <Route path="/signup">
             {!loggedIn ? (
-              <Register handleRegister={handleRegister} />
+              <Register handleRegister={handleRegister} isLoading={isLoading} />
             ) : (
               <Redirect to="/" />
             )}
@@ -205,6 +218,7 @@ function App() {
           <ProtectedRoute
             loggedIn={loggedIn}
             path="/profile"
+            isLoading={isLoading}
             component={Profile}
             signOut={handleSignOut}
             onUpdateUser={handleUpdateUser}

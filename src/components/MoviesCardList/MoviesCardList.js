@@ -4,6 +4,7 @@ import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SearchError from "../SearchError/SearchError";
 import Preloader from "../Preloader/Preloader";
+import {DISPLAY} from '../../utils/constants'
 
 function MoviesCardList({
   movies,
@@ -16,15 +17,14 @@ function MoviesCardList({
   isSavedMovies,
 }) {
   const [displayedMovies, setDisplayedMovies] = useState(0);
-  const display = window.innerWidth;
   const { pathname } = useLocation();
 
   function displayCountMovies() {
-    if (display > 1135) {
+    if (DISPLAY > 1135) {
       setDisplayedMovies(12);
-    } else if (display <= 1135) {
+    } else if (DISPLAY <= 1135) {
       setDisplayedMovies(8);
-    } else if (display <= 480) {
+    } else if (DISPLAY <= 480) {
       setDisplayedMovies(5);
     }
   }
@@ -40,11 +40,11 @@ function MoviesCardList({
   });
 
   function displayMore() {
-    if (display > 1200) {
+    if (DISPLAY > 1200) {
       setDisplayedMovies(displayedMovies + 4);
-    } else if (display <= 1200 && display > 1136) {
+    } else if (DISPLAY <= 1200 && DISPLAY > 1136) {
       setDisplayedMovies(displayedMovies + 3);
-    } else if (display <= 1136) {
+    } else if (DISPLAY <= 1136) {
       setDisplayedMovies(displayedMovies + 2);
     }
   }
