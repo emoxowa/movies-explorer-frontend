@@ -60,6 +60,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  cursor: default;
 }
 
 @media (max-width: 768px) {
@@ -127,3 +128,8 @@
   }
 }
 
+.techs__skill:hover {
+  background-color: #3DDC84;
+  color: #000000;
+  transition: 0.2s linear;
+}

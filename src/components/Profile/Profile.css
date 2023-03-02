@@ -8,13 +8,13 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
-  margin-top: 74px;
+  margin-top: 70px;
 }
 
 .profile__form {
   display: flex;
-  flex-direction: column;
-  margin: 105px 0 220px;
+  flex-direction: column;  
+  margin: 105px 0 16px;
   width: 410px;
   gap: 16px;
 }
@@ -51,13 +51,25 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  margin: 0 0 16px;
+  margin-top: 185px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
 }
 
 .profile__text:hover {
   opacity: 0.6;
   transition: 0.2s linear;
+}
+
+.profile__text-error {
+  color: #C2C2C2;
+}
+
+.profile__text-error:hover {
+  margin-top: 185px;
+  cursor: context-menu;
 }
 
 .profile__link {
@@ -66,10 +78,23 @@
   font-size: 13px;
   line-height: 16px;
   margin-bottom: 70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .profile__input::placeholder {
   color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.profile__error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+  margin-top: -10px;
+  text-align: start;
 }
 
 @media (max-width: 768px) {

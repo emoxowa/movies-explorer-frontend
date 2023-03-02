@@ -13,7 +13,6 @@ function Navigation({ loggedIn }) {
     setMenuStatus(false);
   }
   
-
   if (!loggedIn) {
     return (
       <nav className="navigation">
