@@ -54,6 +54,9 @@ The backend API is built using Node.js and Express, and uses MongoDB as the data
 * Centralized error handling
 * Validation of incoming data
 
+## Project Status:
+This project is completed and is no longer being actively maintained.
+
 ## Website link
 To open the website, click on the following link 👉🏻: https://movies-explorer.yandex.nomoredomains.club/
 
