@@ -6,7 +6,7 @@ This project is a full-stack web application that allows users to search for mov
 * IP 51.250.66.98
 * Frontend https://movies-explorer.yandex.nomoredomains.club/
 * Backend https://api.movies-explorer.ya.nomoredomains.club
-* [Link to layout in Figma](https://drive.google.com/drive/folders/1OFROUnXZKQvoaR4yGTWd1K7OsoRrQBRe?usp=sharing)
+* [Link to a design layout in Figma,](https://drive.google.com/drive/folders/1OFROUnXZKQvoaR4yGTWd1K7OsoRrQBRe?usp=sharing)
 
 ## Technologies Used
 
