@@ -54,6 +54,15 @@ The backend API is built using Node.js and Express, and uses MongoDB as the data
 * Centralized error handling
 * Validation of incoming data
 
+## Installation
+
+1. Clone the repository: `git clone https://github.com/emoxowa/movies-explorer-frontend.git`
+3. Install the frontend dependencies: `npm install`
+4. Clone the repository: `git clone https://github.com/emoxowa/movies-explorer-api.git`
+5. Install the backend dependencies: `npm install`
+6. Set up the environment variables. Copy the contents of `.env.example` into a new file named `.env` and replace the values with your own.
+7. Run the development server: `npm run dev`
+
 ## Project Status:
 This project is completed and is no longer being actively maintained.
 
