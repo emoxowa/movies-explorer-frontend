@@ -68,6 +68,10 @@ This project is completed and is no longer being actively maintained.
 ## Website link
 To open the website, click on the following link 👉🏻: https://movies-explorer.yandex.nomoredomains.club/
 
+![gif](https://github.com/emoxowa/movies-explorer-frontend/blob/main/src/images/gif1.gif)
+![gif](https://github.com/emoxowa/movies-explorer-frontend/blob/main/src/images/gif2.gif)
+![gif](https://github.com/emoxowa/movies-explorer-frontend/blob/main/src/images/gif3.gif)
+
 ---
 
 <p>This project was created by <a href="https://github.com/emoxowa">Evgeniia Mokhova</a> as part of the Web Development course at <a href="https://practicum.yandex.ru/web/">Yandex.Practicum</a>.</p>
